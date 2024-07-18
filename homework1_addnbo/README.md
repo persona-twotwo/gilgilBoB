@@ -17,7 +17,7 @@
 * `printf`를 통하여 형식에 맞게 데이터 출력
 
 ### readFile
-`readFile(char* path, uint32_t *data)`
+> `void readFile(char* path, uint32_t *data)`
 * `File` 포인터를 선언 한 후 path로 입력 된 경로의 파일을 읽기
     * 이 떄, 파일이 존재하지 않는 등의 이유로 정상적으로 열리지 않은 경우에는 File 포인터가 NULL이 리턴되는 것을 통하여 에러처리
 * `fseek`를 통하여 파일의 끝까지 파일포인터를 미루어 파일의 전체 크기를 확인
@@ -26,3 +26,11 @@
 * 읽은 데이터를 `ntohl`함수를 통하여 **NBO**->**HBO** 전환
 * `fclose`를 통하여 파일 포인터 닫기
 * 명시적으로 파일 포인터를 `NULL`로 초기화
+
+
+### error
+> `void error(int n)`
+* `n`을 통해 에러 종류를 입력받고 그에 맞는 출력 후 프로그램 종료
+    1. `n == 1`인 경우는 파일 read Error
+    2. `n == 2`인 경우 파일 크기 Error
+    3. 그 외인 경우 Unknown Error
