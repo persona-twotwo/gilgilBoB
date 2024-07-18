@@ -31,7 +31,8 @@ void readFile(char* path, uint32_t *data){
     fseek(fp,0,SEEK_SET);
     fread(data,32,1,fp);
     *data = ntohl(*data);
-    fclose;
+    fclose(fp);
+    fp=0;
 }
 
 
