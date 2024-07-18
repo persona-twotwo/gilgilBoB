@@ -32,13 +32,12 @@ void readFile(char* path, uint32_t *data){
     fread(data,32,1,fp);
     *data = ntohl(*data);
     fclose(fp);
-    fp=0;
+    fp=NULL;
 }
 
 
 int main(void){
     uint32_t data[2];
-    uint32_t tmp[2];
     readFile("thousand.bin",&data[0]);
     readFile("five-hundred.bin",&data[1]);
     printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n",data[0],data[0],data[1],data[1],data[0]+data[1],data[0]+data[1]);
