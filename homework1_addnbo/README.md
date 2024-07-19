@@ -36,4 +36,5 @@
 * `n`을 통해 에러 종류를 입력받고 그에 맞는 출력 후 프로그램 종료
     1. `n == 1`인 경우는 파일 read Error
     2. `n == 2`인 경우 파일 크기 Error
-    3. 그 외인 경우 Unknown Error
+    3. `n == 3`인 매개변수 부족 Error
+    4. 그 외인 경우 Unknown Error
