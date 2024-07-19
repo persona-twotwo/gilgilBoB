@@ -44,6 +44,7 @@ int main(int argc, char* argv[]){
     if(argc == 1){
         error(3);
     }
+    data[0] = 0;
     for(int i=1; i != argc; ++i){
         readFile(argv[i],&data[i]);
         printf("%d(0x%x) ",data[i] ,data[i]);
