@@ -12,8 +12,11 @@
 
 ## 설명
 ### main
+> `int main(int argc, char* argv[])`
+* `argc`가 1인경우 매개변수 부족 에러처리
+* `argc`가 2이상인 경우 총합을 출력
 * `uint32_t`형식의 data배열 선언
-* `readFile`을 통하여 파일을 읽고 파일이 정상적으로 읽힌 경우 data 배열에 포인터를 통하여 자료 저장
+* `readFile`을 통하여 `argv`의 경로에 있는 파일을 읽고 파일이 정상적으로 읽힌 경우 data 배열에 포인터를 통하여 자료 저장
 * `printf`를 통하여 형식에 맞게 데이터 출력
 
 ### readFile

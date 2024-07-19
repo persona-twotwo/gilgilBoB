@@ -12,6 +12,9 @@ void error(int n){
     case 2:
         printf("Error: Not match data size\n");
         exit(2);
+    case 3:
+        printf("Error: Need more arguments\n");
+        exit(3);
     default:
         printf("Unknown Error\n");
         exit(-1);
@@ -36,9 +39,18 @@ void readFile(char* path, uint32_t *data){
 }
 
 
-int main(void){
-    uint32_t data[2];
-    readFile("thousand.bin",&data[0]);
-    readFile("five-hundred.bin",&data[1]);
-    printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n",data[0],data[0],data[1],data[1],data[0]+data[1],data[0]+data[1]);
+int main(int argc, char* argv[]){
+    uint32_t data[argc];
+    if(argc == 1){
+        error(3);
+    }
+    for(int i=1; i != argc; ++i){
+        readFile(argv[i],&data[i]);
+        printf("%d(0x%x) ",data[i] ,data[i]);
+        if(i+1 != argc){
+            printf("+ ");
+        }
+        data[0] += data[i];
+    }
+    printf("= %d(0x%x)\n",data[0],data[0]);
 }
