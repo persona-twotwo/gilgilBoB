@@ -47,11 +47,11 @@ int main(int argc, char* argv[]){
     data[0] = 0;
     for(int i=1; i != argc; ++i){
         readFile(argv[i],&data[i]);
-        printf("%d(0x%x) ",data[i] ,data[i]);
+        printf("%u(0x%x) ",data[i] ,data[i]);
         if(i+1 != argc){
             printf("+ ");
         }
         data[0] += data[i];
     }
-    printf("= %d(0x%x)\n",data[0],data[0]);
+    printf("= %u(0x%x)\n",data[0],data[0]);
 }
