@@ -1,1 +1,1 @@
-!(사진)[./capture.png]
+![사진](./capture.png)
